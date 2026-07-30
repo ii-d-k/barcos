@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Mi registro | Barcos Históricos</title>
+<link rel="stylesheet" href="css/estilos.css" />
+</head>
+<body>
+  <header class="barra-nav">
+    <div class="logo">⚓ Barcos Históricos</div>
+    <nav>
+      <a href="index.html">Inicio</a>
+      <a href="barcos.html">Mi registro</a>
+      <span class="usuario-info" id="usuarioInfo"></span>
+      <button class="boton peligro" id="btnCerrarSesion" style="width:auto; padding:8px 14px;">Cerrar sesión</button>
+    </nav>
+  </header>
+
+  <main class="contenedor-principal">
+    <div class="encabezado-seccion">
+      <h2>Registro de barcos históricos</h2>
+    </div>
+
+    <div id="mensaje" class="mensaje"></div>
+
+    <!-- Formulario de creacion / edicion -->
+    <section class="panel-formulario">
+      <h3 id="tituloFormulario" style="margin-bottom:15px; color:#13315c;">Registrar nuevo barco</h3>
+      <form id="formBarco">
+        <input type="hidden" id="barcoId" />
+        <div class="grid-formulario">
+          <div class="campo">
+            <label for="nombre">Nombre</label>
+            <input type="text" id="nombre" required />
+          </div>
+          <div class="campo">
+            <label for="pais">País</label>
+            <input type="text" id="pais" required />
+          </div>
+          <div class="campo">
+            <label for="añoConstruccion">Año de construcción</label>
+            <input type="number" id="añoConstruccion" required />
+          </div>
+          <div class="campo">
+            <label for="tipo">Tipo</label>
+            <input type="text" id="tipo" placeholder="Ej: Galeón, Fragata, Buque" required />
+          </div>
+          <div class="campo">
+            <label for="funcionPrincipal">Función principal</label>
+            <input type="text" id="funcionPrincipal" placeholder="Ej: Comercio, Guerra, Exploración" required />
+          </div>
+          <div class="campo">
+            <label for="longitudMetros">Longitud (metros)</label>
+            <input type="number" step="0.1" id="longitudMetros" />
+          </div>
+          <div class="campo">
+            <label for="tripulacion">Tripulación</label>
+            <input type="number" id="tripulacion" />
+          </div>
+          <div class="campo">
+            <label for="estadoActual">Estado actual</label>
+            <input type="text" id="estadoActual" placeholder="Ej: Museo, Hundido, Restaurado" />
+          </div>
+          <div class="campo" style="grid-column: 1 / -1;">
+            <label for="hechoHistorico">Hecho histórico</label>
+            <textarea id="hechoHistorico" rows="2"></textarea>
+          </div>
+          <div class="campo" style="grid-column: 1 / -1;">
+            <label for="imagenUrl">URL de imagen</label>
+            <input type="url" id="imagenUrl" placeholder="https://..." />
+          </div>
+        </div>
+        <div class="acciones-formulario">
+          <button type="submit" class="boton exito" id="btnGuardar">Registrar barco</button>
+          <button type="button" class="boton secundario" id="btnCancelar" style="display:none;">Cancelar edición</button>
+        </div>
+      </form>
+    </section>
+
+    <!-- Busqueda y filtros -->
+    <div class="barra-filtros">
+      <input type="text" id="busqueda" placeholder="Buscar por nombre..." />
+      <select id="filtroPais">
+        <option value="">Todos los países</option>
+      </select>
+    </div>
+
+    <!-- Listado -->
+    <section class="rejilla-tarjetas" id="listaBarcos"></section>
+  </main>
+
+  <script src="js/barcos.js"></script>
+</body>
+</html>
