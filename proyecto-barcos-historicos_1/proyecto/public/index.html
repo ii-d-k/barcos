@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Inicio | Barcos Históricos</title>
+<link rel="stylesheet" href="css/estilos.css" />
+</head>
+<body>
+  <header class="barra-nav">
+    <div class="logo">⚓ Barcos Históricos</div>
+    <nav>
+      <a href="index.html">Inicio</a>
+      <a href="barcos.html">Mi registro</a>
+      <span class="usuario-info" id="usuarioInfo"></span>
+      <button class="boton peligro" id="btnCerrarSesion" style="width:auto; padding:8px 14px;">Cerrar sesión</button>
+    </nav>
+  </header>
+
+  <main class="contenedor-principal">
+    <div class="tarjeta-inicio">
+      <h2 id="saludoUsuario">Bienvenido</h2>
+      <p style="margin-top:10px; color:#555;">
+        Esta aplicación te permite registrar, consultar, modificar y eliminar
+        embarcaciones históricas: su país de origen, época, función y hechos relevantes.
+      </p>
+      <br />
+      <a href="barcos.html" class="boton" style="display:inline-block; width:auto; padding:12px 25px; text-decoration:none;">
+        Ir a mi registro de barcos
+      </a>
+    </div>
+  </main>
+
+  <script src="js/index.js"></script>
+</body>
+</html>
